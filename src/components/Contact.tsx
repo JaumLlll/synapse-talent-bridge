@@ -9,13 +9,33 @@ const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", type: "empresa", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve. Obrigado pelo interesse!",
-    });
-    setForm({ name: "", email: "", type: "empresa", message: "" });
+    setLoading(true);
+    try {
+      const { error } = await supabase.from("contacts").insert({
+        name: form.name,
+        email: form.email,
+        type: form.type,
+        message: form.message,
+      });
+      if (error) throw error;
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve. Obrigado pelo interesse!",
+      });
+      setForm({ name: "", email: "", type: "empresa", message: "" });
+    } catch {
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente mais tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
