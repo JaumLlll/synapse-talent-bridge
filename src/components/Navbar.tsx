@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navLinks = [
-  { label: "HOME", href: "#", hasDropdown: false },
-  { label: "SOBRE", href: "#sobre", hasDropdown: true },
-  { label: "COMO FUNCIONA", href: "#como-funciona", hasDropdown: true },
-  { label: "EMPRESAS", href: "#empresas", hasDropdown: true },
-  { label: "JOVENS", href: "#jovens", hasDropdown: true },
-  { label: "IMPACTO", href: "#impacto", hasDropdown: true },
-  { label: "CONTATO", href: "#contato", hasDropdown: false },
+  { label: "Home", href: "#" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Como Funciona", href: "#como-funciona" },
+  { label: "Empresas", href: "#empresas" },
+  { label: "Jovens", href: "#jovens" },
+  { label: "Impacto", href: "#impacto" },
+  { label: "Contato", href: "#contato" },
 ];
 
 const Navbar = () => {
@@ -24,79 +25,61 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "shadow-lg" : ""
-      }`}
+        scrolled ? "glass-strong shadow-lg" : "bg-card/90 backdrop-blur-xl"
+      } border-b border-border/50`}
     >
-      {/* Top brand bar */}
-      <div className="bg-gradient-primary">
-        <div className="container mx-auto flex items-center justify-between h-10 px-4">
-          <a href="#" className="font-heading text-sm font-bold text-primary-foreground tracking-widest uppercase">
-            DataBridge
-          </a>
-          <span className="text-primary-foreground/70 text-xs tracking-wide hidden sm:block">
-            AI for All — Conectando talentos e negócios
-          </span>
-        </div>
-      </div>
+      <div className="container mx-auto flex items-center justify-between h-14 px-4">
+        {/* Logo */}
+        <a href="#" className="font-heading text-xl font-bold text-gradient-primary tracking-tight">
+          DataBridge
+        </a>
 
-      {/* Main nav bar */}
-      <div className="bg-card/95 backdrop-blur-xl border-b border-border/60">
-        <div className="container mx-auto flex items-center justify-between h-12 px-4">
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center w-full">
-            {navLinks.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="group flex flex-col items-center px-4 py-2 text-xs font-semibold tracking-wider text-muted-foreground hover:text-foreground transition-colors duration-200 uppercase"
-              >
-                <span>{l.label}</span>
-                {l.hasDropdown && (
-                  <ChevronDown size={12} className="mt-0.5 text-secondary opacity-70 group-hover:opacity-100 transition-opacity" />
-                )}
-              </a>
-            ))}
-
+        {/* Desktop — links horizontais independentes */}
+        <div className="hidden md:flex items-center gap-1">
+          {navLinks.map((l) => (
             <a
-              href="#contato"
-              className="ml-auto text-xs font-semibold tracking-wider text-secondary hover:text-foreground transition-colors duration-200 uppercase px-4 py-2"
+              key={l.label}
+              href={l.href}
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md hover:bg-muted/50 transition-colors duration-200"
             >
-              MAIS
+              {l.label}
             </a>
-          </div>
-
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden text-foreground p-2 rounded-md hover:bg-muted/50 transition-colors ml-auto"
-            onClick={() => setOpen(!open)}
-            aria-label="Menu"
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          ))}
+          <Button variant="hero" size="sm" className="ml-3" asChild>
+            <a href="#contato">Fale Conosco</a>
+          </Button>
         </div>
-      </div>
 
-      {/* Accent line */}
-      <div className="h-[2px] bg-gradient-secondary" />
+        {/* Mobile toggle */}
+        <button
+          className="md:hidden p-2 text-foreground rounded-md hover:bg-muted/50 transition-colors"
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
 
       {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-card/95 backdrop-blur-xl border-b border-border/60 px-4 pb-4 pt-2">
+        <div className="glass-strong border-t border-border/50 px-4 pb-4 pt-1">
           {navLinks.map((l) => (
             <a
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between py-3 text-sm font-semibold text-muted-foreground hover:text-foreground hover:pl-2 transition-all duration-200 uppercase tracking-wider border-b border-border/30 last:border-0"
+              className="block py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:pl-2 transition-all duration-200"
             >
-              <span>{l.label}</span>
-              {l.hasDropdown && <ChevronDown size={14} className="text-secondary" />}
+              {l.label}
             </a>
           ))}
+          <Button variant="hero" size="sm" className="w-full mt-2" asChild>
+            <a href="#contato" onClick={() => setOpen(false)}>Fale Conosco</a>
+          </Button>
         </div>
       </div>
     </nav>
