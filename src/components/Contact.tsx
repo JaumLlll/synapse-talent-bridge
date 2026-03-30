@@ -122,7 +122,6 @@ const Contact = () => {
             <Button variant="hero" size="lg" type="submit" className="w-full text-base" disabled={loading}>
               {loading ? <><Loader2 className="mr-2 animate-spin" size={18} /> Enviando...</> : <>Enviar mensagem <Send className="ml-2" size={18} /></>}
             </Button>
-            </Button>
           </form>
         </div>
       </div>
