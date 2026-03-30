@@ -31,8 +31,9 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-14 px-4">
         {/* Logo */}
-        <a href="#" className="font-heading text-xl font-bold text-gradient-primary tracking-tight">
-          DataBridge
+        <a href="#" className="flex items-center gap-2">
+          <img src={logoDatabridge} alt="DataBridge Logo" className="h-9 w-9 rounded-full object-cover" />
+          <span className="font-heading text-xl font-bold text-gradient-primary tracking-tight">DataBridge</span>
         </a>
 
         {/* Desktop — links horizontais independentes */}
