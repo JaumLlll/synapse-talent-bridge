@@ -26,9 +26,22 @@ const Footer = () => {
             ))}
           </div>
 
-          <p className="text-muted-foreground text-sm text-right">
-            © {new Date().getFullYear()} DataBridge. Todos os direitos reservados.
-          </p>
+          <div className="flex flex-col items-end gap-3">
+            <div className="flex gap-3">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+                <Instagram size={18} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+                <Linkedin size={18} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+                <Youtube size={18} />
+              </a>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} DataBridge. Todos os direitos reservados.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
