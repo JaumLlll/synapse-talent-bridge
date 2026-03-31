@@ -1,4 +1,5 @@
 import logoDatabridge from "@/assets/logo-databridge.jpeg";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
