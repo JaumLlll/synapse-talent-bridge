@@ -36,35 +36,35 @@ const Navbar = () => {
           <span className="font-heading text-xl font-bold text-gradient-primary tracking-tight">DataBridge</span>
         </a>
 
-        {/* Desktop — links horizontais independentes */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Links horizontais */}
+        <div className="hidden sm:flex items-center gap-0.5">
           {navLinks.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md hover:bg-muted/50 transition-colors duration-200"
+              className="px-2 py-2 text-xs font-medium text-muted-foreground hover:text-foreground rounded-md hover:bg-muted/50 transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
-          <div className="flex items-center gap-2 ml-3">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Instagram size={18} />
+          <div className="flex items-center gap-1 ml-2">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Instagram size={16} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Linkedin size={18} />
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Linkedin size={16} />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Youtube size={18} />
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Youtube size={16} />
             </a>
           </div>
-          <Button variant="hero" size="sm" className="ml-2" asChild>
+          <Button variant="hero" size="sm" className="ml-2 text-xs px-2.5 h-8" asChild>
             <a href="#contato">Fale Conosco</a>
           </Button>
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden flex items-center gap-1">
+        <div className="sm:hidden flex items-center gap-1">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
             <Instagram size={18} />
           </a>
@@ -86,7 +86,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
