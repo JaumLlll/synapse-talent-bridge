@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logoDatabridge from "@/assets/logo-databridge.jpeg";
-import { Menu, X, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -47,17 +47,6 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <div className="flex items-center gap-1 ml-2">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Instagram size={16} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Linkedin size={16} />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-              <Youtube size={16} />
-            </a>
-          </div>
           <Button variant="hero" size="sm" className="ml-2 text-xs px-2.5 h-8" asChild>
             <a href="#contato">Fale Conosco</a>
           </Button>
@@ -65,15 +54,6 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <div className="sm:hidden flex items-center gap-1">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-            <Instagram size={18} />
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-            <Linkedin size={18} />
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
-            <Youtube size={18} />
-          </a>
           <button
             className="p-2 text-foreground rounded-md hover:bg-muted/50 transition-colors"
             onClick={() => setOpen(!open)}
