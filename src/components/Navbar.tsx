@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logoDatabridge from "@/assets/logo-databridge.jpeg";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Linkedin, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
