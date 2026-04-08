@@ -64,7 +64,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden flex items-center gap-1">
+        <div className="sm:hidden flex items-center gap-1">
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
             <Instagram size={18} />
           </a>
@@ -86,7 +86,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
