@@ -64,13 +64,24 @@ const Navbar = () => {
         </div>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden p-2 text-foreground rounded-md hover:bg-muted/50 transition-colors"
-          onClick={() => setOpen(!open)}
-          aria-label="Menu"
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+            <Instagram size={18} />
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+            <Linkedin size={18} />
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+            <Youtube size={18} />
+          </a>
+          <button
+            className="p-2 text-foreground rounded-md hover:bg-muted/50 transition-colors"
+            onClick={() => setOpen(!open)}
+            aria-label="Menu"
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
