@@ -47,7 +47,18 @@ const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button variant="hero" size="sm" className="ml-3" asChild>
+          <div className="flex items-center gap-2 ml-3">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Instagram size={18} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Linkedin size={18} />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <Youtube size={18} />
+            </a>
+          </div>
+          <Button variant="hero" size="sm" className="ml-2" asChild>
             <a href="#contato">Fale Conosco</a>
           </Button>
         </div>
