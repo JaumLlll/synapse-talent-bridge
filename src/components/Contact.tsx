@@ -2,41 +2,22 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { useToast } from "@/hooks/use-toast";
+import { Send } from "lucide-react";
+
+const CONTACT_EMAIL = "contato@exemplo.com";
 
 const Contact = () => {
-  const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", type: "empresa", message: "" });
 
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    try {
-      const { error } = await supabase.from("contacts").insert({
-        name: form.name,
-        email: form.email,
-        type: form.type,
-        message: form.message,
-      });
-      if (error) throw error;
-      toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve. Obrigado pelo interesse!",
-      });
-      setForm({ name: "", email: "", type: "empresa", message: "" });
-    } catch {
-      toast({
-        title: "Erro ao enviar",
-        description: "Tente novamente mais tarde.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
+    const subject = encodeURIComponent(
+      `[${form.type === "empresa" ? "Empresa" : "Jovem"}] Contato de ${form.name}`
+    );
+    const body = encodeURIComponent(
+      `Nome: ${form.name}\nEmail: ${form.email}\nTipo: ${form.type}\n\nMensagem:\n${form.message}`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -119,8 +100,8 @@ const Contact = () => {
               />
             </div>
 
-            <Button variant="hero" size="lg" type="submit" className="w-full text-base" disabled={loading}>
-              {loading ? <><Loader2 className="mr-2 animate-spin" size={18} /> Enviando...</> : <>Enviar mensagem <Send className="ml-2" size={18} /></>}
+            <Button variant="hero" size="lg" type="submit" className="w-full text-base">
+              Enviar mensagem <Send className="ml-2" size={18} />
             </Button>
           </form>
         </div>
