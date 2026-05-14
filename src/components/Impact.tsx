@@ -12,16 +12,19 @@ const testimonials = [
     quote: "A DataBridge mudou a realidade do meu negócio. Nunca imaginei ter acesso a tecnologia de IA a um custo tão acessível.",
     name: "Maria Silva",
     role: "Dona de restaurante",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
   },
   {
     quote: "Aprendi mais em 3 meses com a DataBridge do que em anos estudando sozinho. Hoje trabalho com dados e IA.",
     name: "Lucas Santos",
     role: "Jovem formado pela DataBridge",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     quote: "O impacto social e econômico que a DataBridge gera é impressionante. É o futuro da educação em tecnologia.",
     name: "Dr. Ana Costa",
     role: "Parceira institucional",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
   },
 ];
 
@@ -52,9 +55,17 @@ const Impact = () => {
             <div key={t.name} className="glass rounded-xl p-8 hover:shadow-glow-secondary transition-all duration-500">
               <Quote className="text-secondary/40 mb-4" size={32} />
               <p className="text-foreground/90 mb-6 leading-relaxed italic">"{t.quote}"</p>
-              <div>
-                <p className="font-heading font-semibold">{t.name}</p>
-                <p className="text-muted-foreground text-sm">{t.role}</p>
+              <div className="flex items-center gap-3">
+                <img
+                  src={t.avatar}
+                  alt={`Foto de ${t.name}`}
+                  loading="lazy"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-secondary/30"
+                />
+                <div>
+                  <p className="font-heading font-semibold">{t.name}</p>
+                  <p className="text-muted-foreground text-sm">{t.role}</p>
+                </div>
               </div>
             </div>
           ))}
