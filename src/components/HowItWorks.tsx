@@ -1,26 +1,24 @@
-import { GraduationCap, Cpu, Briefcase, Sparkles } from "lucide-react";
-
 const steps = [
   {
-    icon: GraduationCap,
+    photo: "https://randomuser.me/api/portraits/women/65.jpg",
     number: "01",
     title: "Jovens aprendem IA",
     description: "Jovens das periferias recebem formação prática em inteligência artificial e tecnologia.",
   },
   {
-    icon: Cpu,
+    photo: "https://randomuser.me/api/portraits/men/52.jpg",
     number: "02",
     title: "Desafios reais",
     description: "Pequenas empresas apresentam seus desafios de negócio que podem ser resolvidos com tecnologia.",
   },
   {
-    icon: Sparkles,
+    photo: "https://randomuser.me/api/portraits/women/22.jpg",
     number: "03",
     title: "Soluções com IA",
     description: "Os jovens desenvolvem soluções de IA personalizadas para resolver os problemas das empresas.",
   },
   {
-    icon: Briefcase,
+    photo: "https://randomuser.me/api/portraits/men/76.jpg",
     number: "04",
     title: "Todos ganham",
     description: "Jovens ganham experiência e oportunidades. Empresas ganham inovação e competitividade.",
@@ -46,9 +44,12 @@ const HowItWorks = () => {
                 <span className="text-5xl font-heading font-bold text-gradient-secondary opacity-30 block mb-4">
                   {step.number}
                 </span>
-                <div className="w-12 h-12 rounded-lg bg-gradient-secondary flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <step.icon className="text-secondary-foreground" size={24} />
-                </div>
+                <img
+                  src={step.photo}
+                  alt={`Pessoa representando ${step.title}`}
+                  loading="lazy"
+                  className="w-16 h-16 rounded-full object-cover mb-4 ring-2 ring-secondary/40 group-hover:scale-110 transition-transform"
+                />
                 <h3 className="font-heading text-lg font-semibold mb-2">{step.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
               </div>
