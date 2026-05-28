@@ -1,22 +1,29 @@
-import workersImage from "@/assets/how-it-works-workers.jpeg";
+import step1 from "@/assets/step-1-youth-learning.jpg";
+import step2 from "@/assets/step-2-business-challenges.jpg";
+import step3 from "@/assets/step-3-ai-solutions.jpg";
+import step4 from "@/assets/step-4-everyone-wins.jpg";
 
 const steps = [
   {
+    image: step1,
     number: "01",
     title: "Jovens aprendem IA",
     description: "Jovens das periferias recebem formação prática em inteligência artificial e tecnologia.",
   },
   {
+    image: step2,
     number: "02",
     title: "Desafios reais",
     description: "Pequenas empresas apresentam seus desafios de negócio que podem ser resolvidos com tecnologia.",
   },
   {
+    image: step3,
     number: "03",
     title: "Soluções com IA",
     description: "Os jovens desenvolvem soluções de IA personalizadas para resolver os problemas das empresas.",
   },
   {
+    image: step4,
     number: "04",
     title: "Todos ganham",
     description: "Jovens ganham experiência e oportunidades. Empresas ganham inovação e competitividade.",
@@ -44,9 +51,11 @@ const HowItWorks = () => {
                 </span>
                 <div className="w-full aspect-square overflow-hidden rounded-lg mb-4 ring-2 ring-secondary/40">
                   <img
-                    src={workersImage}
+                    src={step.image}
                     alt={`Imagem ilustrando ${step.title}`}
                     loading="lazy"
+                    width={768}
+                    height={768}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                 </div>
