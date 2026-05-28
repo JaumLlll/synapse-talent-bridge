@@ -29,18 +29,19 @@ const Footer = () => {
 
           <div className="flex flex-col items-end gap-3">
             <div className="flex gap-3">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#A020F0] hover:shadow-[0_0_15px_#A020F0] transition-all">
                 <Instagram size={18} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#0A66C2] hover:shadow-[0_0_15px_#0A66C2] transition-all">
                 <Linkedin size={18} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#FF0000] hover:shadow-[0_0_15px_#FF0000] transition-all">
                 <Youtube size={18} />
               </a>
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#25D366] transition-colors">
+              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#25D366] hover:shadow-[0_0_15px_#25D366] transition-all">
                 <WhatsAppIcon size={18} />
               </a>
+
             </div>
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} DataBridge. Todos os direitos reservados.
