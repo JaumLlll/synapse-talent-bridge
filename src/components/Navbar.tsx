@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 import logoDatabridge from "@/assets/logo-databridge.jpeg";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const navLinks = [
   { label: "Home", href: "#" },
-  { label: "Sobre", href: "#sobre" },
   { label: "Como Funciona", href: "#como-funciona" },
-  { label: "Empresas", href: "#empresas" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Projetos", href: "#projetos" },
+  { label: "Quem Somos", href: "#sobre" },
+  { label: "Dúvidas", href: "#faq" },
   { label: "Jovens", href: "#jovens" },
-  { label: "Impacto", href: "#impacto" },
-  { label: "Contato", href: "#contato" },
 ];
 
 const Navbar = () => {
@@ -48,7 +49,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="sm" className="ml-2 text-xs px-2.5 h-8" asChild>
-            <a href="#contato">Fale Conosco</a>
+            <a href={whatsappLink("menu")} target="_blank" rel="noopener noreferrer">Fale Conosco</a>
           </Button>
         </div>
 
@@ -82,7 +83,7 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="hero" size="sm" className="w-full mt-2" asChild>
-            <a href="#contato" onClick={() => setOpen(false)}>Fale Conosco</a>
+            <a href={whatsappLink("menu celular")} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)}>Fale Conosco</a>
           </Button>
         </div>
       </div>

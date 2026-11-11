@@ -1,76 +1,34 @@
-import step1 from "@/assets/step-1-youth-learning.jpg";
-import step2 from "@/assets/step-2-business-challenges.jpg";
-import step3 from "@/assets/step-3-ai-solutions.jpg";
-import step4 from "@/assets/step-4-everyone-wins.jpg";
+import { Search, Hammer, PlayCircle, TrendingUp } from "lucide-react";
 
 const steps = [
-  {
-    image: step1,
-    number: "01",
-    title: "Jovens aprendem IA",
-    description: "Jovens das periferias recebem formação prática em inteligência artificial e tecnologia.",
-  },
-  {
-    image: step2,
-    number: "02",
-    title: "Desafios reais",
-    description: "Pequenas empresas apresentam seus desafios de negócio que podem ser resolvidos com tecnologia.",
-  },
-  {
-    image: step3,
-    number: "03",
-    title: "Soluções com IA",
-    description: "Os jovens desenvolvem soluções de IA personalizadas para resolver os problemas das empresas.",
-  },
-  {
-    image: step4,
-    number: "04",
-    title: "Todos ganham",
-    description: "Jovens ganham experiência e oportunidades. Empresas ganham inovação e competitividade.",
-  },
+  { icon: Search, number: "01", title: "Entender.", description: "Visitamos seu negócio, conversamos com você e descobrimos o que mais trava o seu dia a dia." },
+  { icon: Hammer, number: "02", title: "Construir.", description: "Desenhamos e desenvolvemos a solução certa para a sua realidade, com IA quando fizer sentido." },
+  { icon: PlayCircle, number: "03", title: "Praticar.", description: "Colocamos a solução para rodar no seu negócio, ajustamos junto com você e acompanhamos os primeiros resultados." },
+  { icon: TrendingUp, number: "04", title: "Escalar.", description: "Com a solução funcionando, ajudamos seu negócio a crescer e a levar a tecnologia para outras áreas." },
 ];
 
-const HowItWorks = () => {
-  return (
-    <section id="como-funciona" className="py-24 relative">
-      <div className="absolute inset-0 bg-glow opacity-30" />
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <p className="text-secondary font-medium mb-3 tracking-widest uppercase text-sm">Como funciona</p>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold">
-            O modelo <span className="text-gradient-hero">DataBridge</span>
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative group">
-              <div className="glass rounded-xl p-8 h-full hover:shadow-glow-secondary transition-all duration-500">
-                <span className="text-5xl font-heading font-bold text-gradient-secondary opacity-30 block mb-4">
-                  {step.number}
-                </span>
-                <div className="w-full aspect-square overflow-hidden rounded-lg mb-4 ring-2 ring-secondary/40">
-                  <img
-                    src={step.image}
-                    alt={`Imagem ilustrando ${step.title}`}
-                    loading="lazy"
-                    width={768}
-                    height={768}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="font-heading text-lg font-semibold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
-              </div>
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-secondary" />
-              )}
-            </div>
-          ))}
-        </div>
+const HowItWorks = () => (
+  <section id="como-funciona" className="py-24 relative">
+    <div className="absolute inset-0 bg-glow opacity-30" />
+    <div className="container mx-auto px-4 relative z-10">
+      <div className="text-center mb-16">
+        <p className="text-secondary font-medium mb-3 tracking-widest uppercase text-sm">Nosso método</p>
+        <h2 className="text-3xl md:text-5xl font-heading font-bold">
+          Entender, construir, praticar e <span className="text-gradient-hero">escalar</span>
+        </h2>
       </div>
-    </section>
-  );
-};
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map((s) => (
+          <div key={s.number} className="glass rounded-xl p-8 h-full hover:shadow-glow-secondary transition-all duration-500">
+            <span className="text-5xl font-heading font-bold text-gradient-secondary opacity-40 block mb-4">{s.number}</span>
+            <s.icon className="text-secondary mb-4" size={28} />
+            <h3 className="font-heading text-lg font-semibold mb-2">{s.title}</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">{s.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default HowItWorks;

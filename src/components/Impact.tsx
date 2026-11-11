@@ -1,78 +1,18 @@
-import { Quote } from "lucide-react";
-
-const metrics = [
-  { value: "500+", label: "Jovens formados" },
-  { value: "120+", label: "Empresas atendidas" },
-  { value: "95%", label: "Taxa de satisfação" },
-  { value: "30+", label: "Cidades alcançadas" },
-];
-
-const testimonials = [
-  {
-    quote: "A DataBridge mudou a realidade do meu negócio. Nunca imaginei ter acesso a tecnologia de IA a um custo tão acessível.",
-    name: "Maria Silva",
-    role: "Dona de restaurante",
-    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
-  },
-  {
-    quote: "Aprendi mais em 3 meses com a DataBridge do que em anos estudando sozinho. Hoje trabalho com dados e IA.",
-    name: "Lucas Santos",
-    role: "Jovem formado pela DataBridge",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    quote: "O impacto social e econômico que a DataBridge gera é impressionante. É o futuro da educação em tecnologia.",
-    name: "Dr. Ana Costa",
-    role: "Parceira institucional",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-];
-
-const Impact = () => {
-  return (
-    <section id="impacto" className="py-24 relative">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <p className="text-primary font-medium mb-3 tracking-widest uppercase text-sm">Impacto</p>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold">
-            Transformação em <span className="text-gradient-primary">números</span>
-          </h2>
-        </div>
-
-        {/* Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-          {metrics.map((m) => (
-            <div key={m.label} className="glass rounded-xl p-8 text-center hover:shadow-glow-primary transition-all duration-500">
-              <p className="text-4xl md:text-5xl font-heading font-bold text-gradient-hero mb-2">{m.value}</p>
-              <p className="text-muted-foreground text-sm">{m.label}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div key={t.name} className="glass rounded-xl p-8 hover:shadow-glow-secondary transition-all duration-500">
-              <Quote className="text-secondary/40 mb-4" size={32} />
-              <p className="text-foreground/90 mb-6 leading-relaxed italic">"{t.quote}"</p>
-              <div className="flex items-center gap-3">
-                <img
-                  src={t.avatar}
-                  alt={`Foto de ${t.name}`}
-                  loading="lazy"
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-secondary/30"
-                />
-                <div>
-                  <p className="font-heading font-semibold">{t.name}</p>
-                  <p className="text-muted-foreground text-sm">{t.role}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+// Contador (Jovens formados · Empresas atendidas · Projetos entregues): só publicar quando houver números reais.
+const Impact = () => (
+  <section id="impacto" className="py-16">
+    <div className="container mx-auto px-4">
+      <div className="glass rounded-2xl p-10 md:p-14 text-center max-w-4xl mx-auto shadow-glow-primary">
+        <h2 className="text-2xl md:text-4xl font-heading font-bold mb-4">
+          Cada projeto transforma <span className="text-gradient-hero">duas histórias</span>
+        </h2>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Quando você contrata a DataBridge, seu negócio ganha tecnologia e um jovem da periferia ganha
+          experiência real em IA, sempre com supervisão de especialistas.
+        </p>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Impact;

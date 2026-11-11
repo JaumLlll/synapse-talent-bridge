@@ -38,6 +38,9 @@ const ForYouth = () => {
               artificial na prática, resolvendo problemas reais de empresas. Aprenda,
               construa seu portfólio e transforme seu futuro.
             </p>
+            <p className="text-muted-foreground mb-8 leading-relaxed border-l-2 border-secondary pl-4">
+              Você entende um problema real, constrói a solução, pratica com um cliente de verdade e escala sua carreira.
+            </p>
             <Button variant="hero-outline" size="lg" className="text-base" asChild>
               <a href="#contato">
                 Quero aprender IA <ArrowRight className="ml-2" size={18} />
