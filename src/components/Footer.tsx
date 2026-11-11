@@ -1,5 +1,7 @@
 import logoDatabridge from "@/assets/logo-databridge.jpeg";
 import { Instagram, Linkedin, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const WhatsAppIcon = ({ size = 18 }: { size?: number }) => (
   <svg
@@ -24,7 +26,12 @@ const Footer = () => {
               <img src={logoDatabridge} alt="DataBridge Logo" className="h-9 w-9 rounded-full object-cover" />
               <p className="font-heading text-xl font-bold text-gradient-primary">DataBridge</p>
             </div>
-            <p className="text-muted-foreground text-sm">AI for All</p>
+            <p className="text-muted-foreground text-sm">IA para todos</p>
+            <p className="text-muted-foreground text-sm mt-3">DataBridge · [cidade]/SP</p>
+            <p className="text-muted-foreground text-sm">
+              WhatsApp [número] · [e-mail] · <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">Instagram</a> · <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-foreground">LinkedIn</a>
+            </p>
+            <Link to="/privacidade" className="text-sm text-secondary hover:underline mt-2 inline-block">Política de Privacidade (LGPD)</Link>
           </div>
 
           <div className="flex flex-col items-end gap-3">
@@ -38,7 +45,7 @@ const Footer = () => {
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#FF0000] hover:shadow-[0_0_15px_#FF0000] transition-all">
                 <Youtube size={18} />
               </a>
-              <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#25D366] hover:shadow-[0_0_15px_#25D366] transition-all">
+              <a href={whatsappLink("rodapé")} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="p-2 rounded-full bg-muted/50 text-muted-foreground hover:text-white hover:bg-[#25D366] hover:shadow-[0_0_15px_#25D366] transition-all">
                 <WhatsAppIcon size={18} />
               </a>
 
