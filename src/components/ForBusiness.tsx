@@ -1,12 +1,16 @@
 import { Button } from "@/components/ui/button";
-import { Ear, Puzzle, BadgeDollarSign, HeartHandshake, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { whatsappLink } from "@/lib/whatsapp";
+import why1 from "@/assets/why-1-listening.jpg";
+import why2 from "@/assets/why-2-custom.jpg";
+import why3 from "@/assets/why-3-fairprice.jpg";
+import why4 from "@/assets/why-4-support.jpg";
 
 const cards = [
-  { icon: Ear, title: "Primeiro a escuta.", desc: "Visitamos seu negócio e entendemos como ele funciona de verdade." },
-  { icon: Puzzle, title: "Solução sob medida.", desc: "Nada de pacote genérico. Criamos o que faz sentido para a sua realidade." },
-  { icon: BadgeDollarSign, title: "Preço justo.", desc: "Tecnologia acessível, pensada para o tamanho do seu negócio." },
-  { icon: HeartHandshake, title: "Acompanhamento de perto.", desc: "Ficamos junto até a solução funcionar no seu dia a dia." },
+  { image: why1, title: "Primeiro a escuta.", desc: "Visitamos seu negócio e entendemos como ele funciona de verdade." },
+  { image: why2, title: "Solução sob medida.", desc: "Nada de pacote genérico. Criamos o que faz sentido para a sua realidade." },
+  { image: why3, title: "Preço justo.", desc: "Tecnologia acessível, pensada para o tamanho do seu negócio." },
+  { image: why4, title: "Acompanhamento de perto.", desc: "Ficamos junto até a solução funcionar no seu dia a dia." },
 ];
 
 const ForBusiness = () => (
@@ -27,9 +31,14 @@ const ForBusiness = () => (
         </div>
         <div className="grid sm:grid-cols-2 gap-4">
           {cards.map((b) => (
-            <div key={b.title} className="glass rounded-xl p-6 hover:shadow-glow-primary transition-all duration-500 group">
-              <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center mb-4 group-hover:bg-gradient-primary transition-all">
-                <b.icon className="text-primary group-hover:text-primary-foreground transition-colors" size={20} />
+            <div key={b.title} className="glass rounded-xl p-5 hover:shadow-glow-primary transition-all duration-500 group">
+              <div className="overflow-hidden rounded-lg mb-4">
+                <img
+                  src={b.image}
+                  alt={b.title}
+                  loading="lazy"
+                  className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
               <h3 className="font-heading font-semibold mb-2">{b.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{b.desc}</p>

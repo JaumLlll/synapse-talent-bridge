@@ -1,10 +1,13 @@
-import { Globe, MessageSquare, BarChart3, Sparkles } from "lucide-react";
+import service1 from "@/assets/service-1-website.jpg";
+import service2 from "@/assets/service-2-whatsapp.jpg";
+import service3 from "@/assets/service-3-reports.jpg";
+import service4 from "@/assets/service-4-ai.jpg";
 
 const services = [
-  { icon: Globe, title: "Site e presença digital.", desc: "Um site profissional para seu negócio ser encontrado e passar confiança. A partir de R$ [valor]." },
-  { icon: MessageSquare, title: "Automação de atendimento.", desc: "Um assistente que responde seus clientes no WhatsApp, até fora do horário." },
-  { icon: BarChart3, title: "Controle e relatórios.", desc: "Saiba de forma simples se o mês foi bom, o que vende mais e onde está perdendo dinheiro." },
-  { icon: Sparkles, title: "Soluções com IA sob medida.", desc: "Quando o problema pede algo mais inteligente, criamos a ferramenta certa." },
+  { image: service1, title: "Site e presença digital.", desc: "Um site profissional para seu negócio ser encontrado e passar confiança. A partir de R$ [valor]." },
+  { image: service2, title: "Automação de atendimento.", desc: "Um assistente que responde seus clientes no WhatsApp, até fora do horário." },
+  { image: service3, title: "Controle e relatórios.", desc: "Saiba de forma simples se o mês foi bom, o que vende mais e onde está perdendo dinheiro." },
+  { image: service4, title: "Soluções com IA sob medida.", desc: "Quando o problema pede algo mais inteligente, criamos a ferramenta certa." },
 ];
 
 const Services = () => (
@@ -18,9 +21,14 @@ const Services = () => (
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((s) => (
-          <div key={s.title} className="glass rounded-xl p-6 hover:shadow-glow-primary transition-all duration-500">
-            <div className="w-11 h-11 rounded-lg bg-gradient-primary flex items-center justify-center mb-4">
-              <s.icon className="text-primary-foreground" size={22} />
+          <div key={s.title} className="glass rounded-xl p-5 hover:shadow-glow-primary transition-all duration-500 group">
+            <div className="overflow-hidden rounded-lg mb-4">
+              <img
+                src={s.image}
+                alt={s.title}
+                loading="lazy"
+                className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
             <h3 className="font-heading font-semibold mb-2">{s.title}</h3>
             <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
