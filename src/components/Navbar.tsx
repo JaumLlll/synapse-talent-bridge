@@ -8,10 +8,8 @@ const navLinks = [
   { label: "Home", href: "#" },
   { label: "Como Funciona", href: "#como-funciona" },
   { label: "Serviços", href: "#servicos" },
-  { label: "Projetos", href: "#projetos" },
   { label: "Quem Somos", href: "#sobre" },
   { label: "Dúvidas", href: "#faq" },
-  { label: "Jovens", href: "#jovens" },
 ];
 
 const Navbar = () => {

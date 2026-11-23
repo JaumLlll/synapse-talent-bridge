@@ -34,11 +34,6 @@ const Hero = () => {
                   Agende uma conversa gratuita <ArrowRight className="ml-2" size={18} />
                 </a>
               </Button>
-              <Button variant="hero-outline" size="lg" className="text-base px-6 py-6" asChild>
-                <a href="#jovens">
-                  Sou jovem e quero aprender IA <ArrowRight className="ml-2" size={18} />
-                </a>
-              </Button>
             </div>
           </div>
 
