@@ -1,16 +1,13 @@
 const founders = [
   {
-    photo: "https://randomuser.me/api/portraits/men/32.jpg",
     name: "Jackson Santos, CEO e cofundador.",
     desc: "Especialista em dados e finanças corporativas, com experiência em análise de requisitos.",
   },
   {
-    photo: "https://randomuser.me/api/portraits/men/45.jpg",
     name: "Israel Teixeira, CTO e cofundador.",
     desc: "Especialista em inteligência artificial e arquitetura de soluções.",
   },
   {
-    photo: "https://randomuser.me/api/portraits/men/22.jpg",
     name: "João Pedro Cavalcante Santos, Desenvolvedor.",
     desc: "Desenvolvedor responsável por transformar ideias em soluções de tecnologia na prática.",
   },
@@ -31,18 +28,9 @@ const About = () => (
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {founders.map((f) => (
-          <div key={f.name} className="glass rounded-xl p-6 flex gap-4 items-start">
-            {/* Foto real do fundador pendente */}
-            <img
-              src={f.photo}
-              alt={f.name}
-              loading="lazy"
-              className="w-16 h-16 shrink-0 rounded-full object-cover"
-            />
-            <div>
-              <h3 className="font-heading font-semibold mb-1">{f.name}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
-            </div>
+          <div key={f.name} className="glass rounded-xl p-6">
+            <h3 className="font-heading font-semibold mb-1">{f.name}</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">{f.desc}</p>
           </div>
         ))}
       </div>
